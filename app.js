@@ -1,24 +1,52 @@
-function userText(){
 
+const startCanvas =(id)=>{
+   return new fabric.Canvas(id,{
+        backgroundColor:'gray'
+    })
+}
+const rawCanva = document.getElementById('canvas') 
+const canvas = startCanvas('canvas')
+
+function backGroundImage(src, canvas){
+    fabric.Image.fromURL(src,(img)=>{
+        canvas.add(img)
+    })
+}
+canvas.requestRenderAll()
+
+const reader = new FileReader()
+
+function addTemp(e){
+  const temp = document.getElementById('myImg').files[0]
+  reader.readAsDataURL(temp)
 }
 
-function memeResponse(image, upper, lower){
-    const canva = document.getElementById('canva')
-    const contex = canva.getContext('2d')
-    contex.drawImage(image, 0, 0, canva.width, canva.height)
+
+
+const memeTemp = document.getElementById('myImg')
+memeTemp.addEventListener('change', addTemp)
+reader.addEventListener("load", ()=>{
+    fabric.Image.fromURL(reader.result, img=>{
+        canvas.add(img)
+        canvas.requestRenderAll()
+    })
+})
+
+const newText = document.getElementById('memeText')
+newText.addEventListener('click', addtext )
+function addtext() {
+  canvas.add(new fabric.IText('Tap and Type', {
+    left: 50,
+    top: 100,
+    fontFamily: 'arial black',
+    fill: '#333',
+    fontSize: 50
+  }));
 }
 
-function textHasChanged(e){
-    let targetId = e.target.id
-    let text = e.target.value
-
-    if(targetId == "upperText"){
-        window.upperText = text
-    }else{
-        window.lowerText = text
-    }
-    
-    memeResponse(window.imageSrc, window.upperText, widow,lowerText)
-
+const saveButton = document.getElementById('saveMeme')
+saveButton.addEventListener("click",saveMeme )
+function saveMeme(e){
+     var image = rawCanva.toDataURL("BestMeme/jpg");
+    e.href = image;
 }
-

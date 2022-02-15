@@ -7,20 +7,18 @@
     <title>Meme Maker</title>
 </head>
 <body>
-    <input type="file" name="MemeTemplate" id="UserTemplate">
-    <canvas id="canva" width="200px" height="200px"></canvas>
+    <div class="center-element">
+     <canvas id="canvas" width="400px" height="400px">
+     </canvas>
     <div>
-        <div>Upper Text</div>
-        <div>
-            <input type="text">
-        </div>
-        
-        <div>Lower Text</div>
-        <div>
-            <input type="text">
-        </div>
-        <button id="saveMeme">Save</button>
+        <input type="file" id="myImg" accept="image/*" name="MemeTemplate" id="UserTemplate">
+        <button>
+        <a id="download" download="myImage.jpg" href="" onclick="saveMeme(this);">Save as myImage.jpg</a>
+    </button>
+        <button id="memeText">Add Text</button>
+    </div>
     </div>
 </body>
+<script src="fabric.min.js"></script>
 <script src="app.js"></script>
 </html>
