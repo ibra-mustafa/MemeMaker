@@ -1,4 +1,71 @@
-.center-element{
+*{
+        font-family:'poppins','Courier New', Courier, monospace;
+        font-weight: 1000;
+}
+
+body{
     display: flex;
     justify-content: center;
+}
+
+.functions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button{
+    border: none;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100px;
+}
+
+input{
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+.crudButtons{
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+}
+.fileLabel{
+    background: #FFE6AB;
+    margin-left:10px ;
+}
+
+.text{
+    background: #EF6D6D;
+}
+
+.save{
+    background: #357C3C;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+canvas{
+    border-radius: 5px;
+}
+.canva{
+    padding: 10px;
 }

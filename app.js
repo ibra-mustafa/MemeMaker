@@ -10,6 +10,7 @@ const canvas = startCanvas('canvas')
 function backGroundImage(src, canvas){
     fabric.Image.fromURL(src,(img)=>{
         canvas.add(img)
+        
     })
 }
 canvas.requestRenderAll()
@@ -38,14 +39,16 @@ function addtext() {
   canvas.add(new fabric.IText('Tap and Type', {
     left: 50,
     top: 100,
-    fontFamily: 'arial black',
-    fill: '#333',
+    fontFamily: 'impact',
+    strokeText:'black',
+    fill: 'white',
     fontSize: 50
   }));
 }
 
-const saveButton = document.getElementById('saveMeme')
-saveButton.addEventListener("click",saveMeme )
+const saveButton = document.getElementById('saveMeme') 
+
+saveButton.addEventListener("click", saveMeme )
 function saveMeme(e){
      var image = rawCanva.toDataURL("BestMeme/jpg");
     e.href = image;

@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <title>Meme Maker</title>
 </head>
 <body>
-    <div class="center-element">
+    <div class="functions">
+        <label class="fileLabel crudButtons" for="myImg">Select template</label>
+        <input type="file" id="myImg" accept="image/*" name="MemeTemplate" id="UserTemplate">
+    
+        <button class="crudButtons text" id="memeText">Add Text</button>
+
+        <button class="crudButtons save">
+            <a id="download" download="myImage.jpg" href="" onclick="saveMeme(this);">Save as myImage.jpg</a>
+        </button>
+    </div>
+    <div class="canva">
      <canvas id="canvas" width="400px" height="400px">
      </canvas>
-    <div>
-        <input type="file" id="myImg" accept="image/*" name="MemeTemplate" id="UserTemplate">
-        <button>
-        <a id="download" download="myImage.jpg" href="" onclick="saveMeme(this);">Save as myImage.jpg</a>
-    </button>
-        <button id="memeText">Add Text</button>
     </div>
-    </div>
+   
 </body>
 <script src="fabric.min.js"></script>
 <script src="app.js"></script>
